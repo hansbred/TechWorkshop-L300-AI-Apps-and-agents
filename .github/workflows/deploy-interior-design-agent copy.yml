@@ -1,17 +1,16 @@
-name: Run Customer Loyalty Agent Initializer
+name: Run Interior Design Agent Initializer
 
 on:
   push:
     paths:
-      - 'src/app/agents/customerLoyaltyAgent_initializer.py'
-      - 'src/app/tools/discountLogic.py'
-      - 'src/prompts/CustomerLoyaltyAgentPrompt.txt'
-      - '.github/workflows/deploy-customer-loyalty-agent.yml'
+      - 'src/app/agents/interiorDesignAgent_initializer.py'
+      - 'src/prompts/InteriorDesignAgentPrompt.txt'
+      - '.github/workflows/deploy-interior-design-agent.yml'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  run-customer-loyalty-agent:
+  run-interior-design-agent:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +31,7 @@ jobs:
           pip install -r src/requirements.txt
           pip install azure-ai-projects
 
-      - name: Run customerLoyaltyAgent_initializer.py
-        run: python src/app/agents/customerLoyaltyAgent_initializer.py
+      - name: Run interiorDesignAgent_initializer.py
+        run: python src/app/agents/interiorDesignAgent_initializer.py
         env:
           ENV_FILE: src/.env
