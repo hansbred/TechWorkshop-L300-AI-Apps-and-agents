@@ -34,6 +34,4 @@ jobs:
           docker build -t $REGISTRY/$IMAGE_NAME:latest src/
           docker push $REGISTRY/$IMAGE_NAME:latest
 
-      # - name: Remove .env file
-      #   run: rm src/.env
       
